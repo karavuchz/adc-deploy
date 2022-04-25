@@ -233,8 +233,8 @@ runtime_parameters:
     secretProvider:
       type: KeyVault
       environment: azure
-      vaultUrl: 'https://mgmtsecret.vault.azure.net'
-      secretId: f5mgmtpass
+      vaultUrl: 'https://adcsecrets.vault.azure.net'
+      secretId: adcsecret
   - name: SELF_IP_EXTERNAL
     type: metadata
     metadataProvider:
