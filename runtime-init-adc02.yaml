@@ -21,7 +21,7 @@ extension_services:
         class: Device
         async: true
         label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with
-          PAYG license
+          BYOL license
         Common:
           class: Tenant
           My_DbVariables:
@@ -44,6 +44,10 @@ extension_services:
             class: DNS
             nameServers:
               - 168.63.129.16
+          My_License:
+            class: License
+            licenseType: regKey
+            regKey: AAAAA-BBBBB-CCCCC-DDDDD-EEEEEEE
           My_System:
             autoPhonehome: true
             class: System
@@ -120,7 +124,7 @@ extension_services:
         class: Device
         async: true
         label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with
-          PAYG license
+          BYOL license
         Common:
           class: Tenant
           My_DbVariables:
@@ -143,6 +147,10 @@ extension_services:
             class: DNS
             nameServers:
               - 168.63.129.16
+           My_License:
+            class: License
+            licenseType: regKey
+            regKey: AAAAA-BBBBB-CCCCC-DDDDD-EEEEEEE
           My_System:
             autoPhonehome: true
             class: System
