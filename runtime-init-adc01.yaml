@@ -47,7 +47,7 @@ extension_services:
           My_License:
             class: License
             licenseType: regKey
-            regKey: AAAAA-BBBBB-CCCCC-DDDDD-EEEEEEE
+            regKey: JPPJE-YVCEY-HIVKF-KRHEV-PVSZFRP
           My_System:
             autoPhonehome: true
             class: System
@@ -150,7 +150,7 @@ extension_services:
           My_License:
             class: License
             licenseType: regKey
-            regKey: AAAAA-BBBBB-CCCCC-DDDDD-EEEEEEE
+            regKey: JPPJE-YVCEY-HIVKF-KRHEV-PVSZFRP
           My_System:
             autoPhonehome: true
             class: System
