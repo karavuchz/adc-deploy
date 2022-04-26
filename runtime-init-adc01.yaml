@@ -241,8 +241,8 @@ runtime_parameters:
     secretProvider:
       type: KeyVault
       environment: azure
-      vaultUrl: 'https://adcsecrets.vault.azure.net'
-      secretId: adcsecret
+      vaultUrl: 'https://appsec01secrets.vault.azure.net'
+      secretId: f5secret
   - name: SELF_IP_EXTERNAL
     type: metadata
     metadataProvider:
