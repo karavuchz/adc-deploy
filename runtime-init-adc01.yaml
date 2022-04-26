@@ -44,14 +44,14 @@ extension_services:
             class: DNS
             nameServers:
               - 168.63.129.16
-          My_License:
-            class: License
-            licenseType: regKey
-            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           My_System:
             autoPhonehome: true
             class: System
             hostname: 'appsecaz01.network.jha'
+          My_License:
+            class: License
+            licenseType: regKey
+            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           admin:
             class: User
             userType: regular
@@ -147,14 +147,14 @@ extension_services:
             class: DNS
             nameServers:
               - 168.63.129.16
-          My_License:
-            class: License
-            licenseType: regKey
-            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           My_System:
             autoPhonehome: true
             class: System
             hostname: 'appsecaz01.network.jha'
+          My_License:
+            class: License
+            licenseType: regKey
+            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           admin:
             class: User
             userType: regular
