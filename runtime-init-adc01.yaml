@@ -20,10 +20,13 @@ extension_services:
         schemaVersion: 1.0.0
         class: Device
         async: true
-        label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with
-          BYOL license
+        label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with BYOL license
         Common:
           class: Tenant
+          My_License:
+            class: License
+            licenseType: regKey
+            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           My_DbVariables:
             class: DbVariables
             provision.extramb: 1000
@@ -48,10 +51,6 @@ extension_services:
             autoPhonehome: true
             class: System
             hostname: 'appsecaz01.network.jha'
-          My_License:
-            class: License
-            licenseType: regKey
-            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           admin:
             class: User
             userType: regular
@@ -123,10 +122,13 @@ extension_services:
         schemaVersion: 1.0.0
         class: Device
         async: true
-        label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with
-          BYOL license
+        label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with BYOL license
         Common:
           class: Tenant
+          My_License:
+            class: License
+            licenseType: regKey
+            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           My_DbVariables:
             class: DbVariables
             provision.extramb: 1000
@@ -151,10 +153,6 @@ extension_services:
             autoPhonehome: true
             class: System
             hostname: 'appsecaz01.network.jha'
-          My_License:
-            class: License
-            licenseType: regKey
-            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           admin:
             class: User
             userType: regular
