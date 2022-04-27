@@ -239,8 +239,8 @@ runtime_parameters:
     secretProvider:
       type: KeyVault
       environment: azure
-      vaultUrl: 'https://tsoappsecrets.vault.azure.net'
-      secretId: adcsecret
+      vaultUrl: 'https://icssecrets.vault.azure.net'
+      secretId: adcpass
   - name: SELF_IP_EXTERNAL
     type: metadata
     metadataProvider:
