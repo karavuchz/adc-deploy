@@ -20,13 +20,10 @@ extension_services:
         schemaVersion: 1.0.0
         class: Device
         async: true
-        label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with BYOL license
+        label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with
+          BYOL license
         Common:
           class: Tenant
-          My_License:
-            class: License
-            licenseType: regKey
-            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           My_DbVariables:
             class: DbVariables
             provision.extramb: 1000
@@ -50,7 +47,11 @@ extension_services:
           My_System:
             autoPhonehome: true
             class: System
-            hostname: 'appsecaz01.network.jha'
+            hostname: 'az-eastus2-adc-01.network.jha'
+          My_License:
+            class: License
+            licenseType: regKey
+            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           admin:
             class: User
             userType: regular
@@ -58,32 +59,32 @@ extension_services:
             shell: bash
           default:
             class: ManagementRoute
-            gw: 10.0.0.1
+            gw: 10.246.84.49
             network: default
           dhclient_route1:
             class: ManagementRoute
-            gw: 10.0.0.1
+            gw: 10.246.84.49
             network: 168.63.129.16/32
           azureMetadata:
             class: ManagementRoute
-            gw: 10.0.0.1
+            gw: 10.246.84.49
             network: 169.254.169.254/32
           defaultRoute:
             class: Route
-            gw: 10.0.1.1
+            gw: 10.246.81.65
             network: default
             mtu: 1500
-          external:
+          f5-sync:
             class: VLAN
             tag: 4094
             mtu: 1500
             interfaces:
               - name: '1.1'
                 tagged: false
-          external-self:
+          f5-sync-self:
             class: SelfIp
             address: '{{{SELF_IP_EXTERNAL}}}'
-            vlan: external
+            vlan: f5-sync
             allowService: default
             trafficGroup: traffic-group-local-only
           internal:
@@ -122,13 +123,10 @@ extension_services:
         schemaVersion: 1.0.0
         class: Device
         async: true
-        label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with BYOL license
+        label: Standalone 3NIC BIG-IP declaration for Declarative Onboarding with
+          BYOL license
         Common:
           class: Tenant
-          My_License:
-            class: License
-            licenseType: regKey
-            regKey: UBOGH-ZJIVC-YUUJX-GGSQL-ULCMVGI
           My_DbVariables:
             class: DbVariables
             provision.extramb: 1000
@@ -152,7 +150,7 @@ extension_services:
           My_System:
             autoPhonehome: true
             class: System
-            hostname: 'appsecaz01.network.jha'
+            hostname: 'az-eastus2-adc-01.network.jha'
           admin:
             class: User
             userType: regular
@@ -160,32 +158,32 @@ extension_services:
             shell: bash
           default:
             class: ManagementRoute
-            gw: 10.0.0.1
+            gw: 10.246.84.49
             network: default
           dhclient_route1:
             class: ManagementRoute
-            gw: 10.0.0.1
+            gw: 10.246.84.49
             network: 168.63.129.16/32
           azureMetadata:
             class: ManagementRoute
-            gw: 10.0.0.1
+            gw: 10.246.84.49
             network: 169.254.169.254/32
           defaultRoute:
             class: Route
-            gw: 10.0.1.1
+            gw: 10.246.84.65
             network: default
             mtu: 1500
-          external:
+          f5-sync:
             class: VLAN
             tag: 4094
             mtu: 1500
             interfaces:
               - name: '1.1'
                 tagged: false
-          external-self:
+          f5-sync-self:
             class: SelfIp
             address: '{{{SELF_IP_EXTERNAL}}}'
-            vlan: external
+            vlan: f5-sync
             allowService: default
             trafficGroup: traffic-group-local-only
           internal:
@@ -203,16 +201,16 @@ extension_services:
             trafficGroup: traffic-group-local-only
           configSync:
             class: ConfigSync
-            configsyncIp: /Common/external-self/address
+            configsyncIp: /Common/f5-sync-self/address
           failoverAddress:
             class: FailoverUnicast
-            address: /Common/external-self/address
+            address: /Common/f5-sync-self/address
           failoverGroup:
             class: DeviceGroup
             type: sync-failover
             members:
-              - appsecaz01.network.jha
-              - appsecaz02.network.jha
+              - az-eastus2-adc-01.network.jha
+              - az-eastus2-adc-02.network.jha
             owner: /Common/failoverGroup/members/0
             autoSync: true
             saveOnAutoSync: false
@@ -239,8 +237,8 @@ runtime_parameters:
     secretProvider:
       type: KeyVault
       environment: azure
-      vaultUrl: 'https://icssecrets.vault.azure.net'
-      secretId: adcpass
+      vaultUrl: 'https://ecpr-eastus2-appsec-kv.vault.azure.net'
+      secretId: ecpr-eastus2-f5-secret
   - name: SELF_IP_EXTERNAL
     type: metadata
     metadataProvider:
